@@ -12,7 +12,18 @@ export default defineConfig({
     vueDevTools(),
    vitePluginSitemap({
   hostname: 'https://autonovacorp.netlify.app',
-})
+      outDir: 'dist',
+      routes: [
+        '/',
+        '/servicios',
+        '/contacto',
+        '/nosotros',
+        '/proyectos',
+        '/soporte'
+      ],
+      changefreq: 'daily',
+      priority: 1.0
+    })
   ],
   resolve: {
     alias: {
