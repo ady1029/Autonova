@@ -1,7 +1,8 @@
 <template>
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark fixed-top">
     <div class="container-fluid">
-      <div>
+      <div class="d-flex">
+        <img src="./icons/icono.jpg" alt="" class="icono" />
         <h1 class="navbar-brand mb-0">AutoNova</h1>
       </div>
       <button
@@ -22,16 +23,17 @@
               <RouterLink class="nav-link" to="/" @click="cerrarPanel">Inicio</RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink class="nav-link" to="/" @click="cerrarPanel">Servicios</RouterLink>
+              <RouterLink class="nav-link" to="/servicios" @click="cerrarPanel"
+                >Servicios</RouterLink
+              >
             </li>
             <li class="nav-item">
-              <RouterLink class="nav-link" to="/" @click="cerrarPanel">Quienes somos?</RouterLink>
+              <RouterLink class="nav-link" to="/quienes-somos" @click="cerrarPanel"
+                >Quienes somos?</RouterLink
+              >
             </li>
             <li class="nav-item">
-              <RouterLink class="nav-link" to="/" @click="cerrarPanel">Contacto</RouterLink>
-            </li>
-            <li class="nav-item">
-              <RouterLink class="nav-link" to="/" @click="cerrarPanel">FAQ</RouterLink>
+              <RouterLink class="nav-link" to="/contacto" @click="cerrarPanel">Contacto</RouterLink>
             </li>
           </ul>
         </div>
@@ -49,7 +51,9 @@ function cerrarPanel() {
     bsCollapse.hide()
   }
 }
-
+/*<li class="nav-item">
+              <RouterLink class="nav-link" to="/" @click="cerrarPanel">FAQ</RouterLink>
+            </li>*/
 function cerrarSesion() {
   localStorage.removeItem('token')
   cerrarPanel()
@@ -57,6 +61,11 @@ function cerrarSesion() {
 }
 </script>
 <style scoped>
+.icono {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 0.3rem;
+}
 * {
   font-family: Inter, sans-serif;
 }
@@ -69,9 +78,10 @@ nav {
   gap: 1rem;
   background-color: #1f3a5f;
   padding: 0;
+  border-bottom: #1f3a5f;
 }
 .navegacion {
-  background-color: #2d7a5c;
+  background-color: #526992;
   padding: 0.5rem;
 }
 
@@ -95,7 +105,7 @@ nav a:first-of-type {
 }
 
 nav a.router-link-exact-active {
-  color: #f5a623;
+  color: #d9a211;
 }
 
 nav a.router-link-exact-active:hover {
@@ -103,9 +113,10 @@ nav a.router-link-exact-active:hover {
 }
 
 h1 {
-  margin-left: 1rem;
+  margin-left: 0.5rem;
   font-size: 1.5rem;
   color: white;
+  margin-top: 0.3rem;
 }
 
 .nav-link.router-link-exact-active {
